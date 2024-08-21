@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'childWidget.dart';
 import 'reuseCard.dart';
 import 'constants.dart';
+import 'result.dart';
 
 enum Gender {
   male,
@@ -74,7 +75,8 @@ class _InputRangeState extends State<InputRange> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("BMI Caculator"),
+          title: Text("BMI CACULATOR"),
+          centerTitle: true,
         ),
         body: Container(
           child: Column(
@@ -116,7 +118,7 @@ class _InputRangeState extends State<InputRange> {
                           children: <Widget>[
                             Text(
                               height.toString(),
-                              style: kNumberMediumStyle,
+                              style: kNumberLargeStyle,
                             ),
                             Text(
                               'cm',
@@ -196,7 +198,7 @@ class _InputRangeState extends State<InputRange> {
                                         ),
                                         func: (){
                                           setState(() {
-                                            weight--;
+                                            weight++;
                                           });
                                         },
                                       ),
@@ -267,6 +269,17 @@ class _InputRangeState extends State<InputRange> {
                 width: double.infinity,
                 height: kHeightBottomButton,
                 color: kColorBottomButton,
+                child: GestureDetector(
+                  onTap: (){
+                    print("caculate was pressed");
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>const Result()));
+                  },
+                  child: Center(
+                    child: Text("CACULATE",
+                      style: kNumberMediumStyle,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

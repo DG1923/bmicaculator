@@ -11,10 +11,19 @@ const kNumberLargeStyle = TextStyle(
   fontFamily: 'Amsterdam',
   fontSize: 70,
 );
-
+const kTextStyleLarge = TextStyle(
+  fontFamily: 'Amsterdam',
+  fontSize: 60,
+  fontWeight: FontWeight.bold,
+);
+const kTextResult = TextStyle(
+  fontFamily: 'Amsterdam',
+  fontSize: 40,
+  color: Colors.green,
+);
 const kNumberMediumStyle = TextStyle(
   fontFamily: 'Amsterdam',
-  fontSize: 70,
+  fontSize: 50,
 );
 const kUnitStyle = TextStyle(
   fontFamily: 'Amsterdam',

@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
               fontSize: 20,
             )),
       ),
-      home: InputRange(),
+      home: const InputRange(),
     );
   }
 }
