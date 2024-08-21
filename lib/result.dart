@@ -3,14 +3,19 @@ import 'package:flutter/material.dart';
 import 'reuseCard.dart';
 
 class Result extends StatelessWidget {
-  const Result({super.key});
+  Result({required this.result,required this. comment, required this. bmiRange, required this.bmi});
+  late String result;
+  late String comment;
+  late String bmiRange;
+  late String bmi;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              title: Text("BMI CACULATOR"),
+              title: Text("BMI CACULATOR",
+              style: kTextStyle,),
               centerTitle: true,
             ),
             body: Column(
@@ -29,23 +34,23 @@ class Result extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Text(
-                          'Normal',
+                          result,
                           style: kTextResult,
                         ),
                         Text(
-                          '20',
+                          bmi,
                           style: kNumberLargeStyle,
                         ),
                         Text(
-                          'Normal BMI range:',
+                          'BMI range:',
                           style: kTextStyle,
                         ),
                         Text(
-                          "18,5 - 25kg/m2",
+                          bmiRange+" Kg/m2",
                           style: kTextStyle,
                         ),
                         Text(
-                          "You have normal body weight. Good job!",
+                          comment,
                           style: kTextStyle,
                         ),
                         ElevatedButton(
@@ -69,10 +74,7 @@ class Result extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       print("caculate was pressed");
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Result()));
+                      Navigator.pop;
                     },
                     child: Center(
                       child: GestureDetector(

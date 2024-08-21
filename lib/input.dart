@@ -4,6 +4,7 @@ import 'childWidget.dart';
 import 'reuseCard.dart';
 import 'constants.dart';
 import 'result.dart';
+import 'caculateBrain.dart';
 
 enum Gender {
   male,
@@ -272,7 +273,8 @@ class _InputRangeState extends State<InputRange> {
                 child: GestureDetector(
                   onTap: (){
                     print("caculate was pressed");
-                    Navigator.push(context, MaterialPageRoute(builder: (context) =>const Result()));
+                    Caculatebrain caculateBrain = Caculatebrain(height: height, weight: weight, age: age);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Result(result: caculateBrain.getResult(), comment: caculateBrain.getResultComment(), bmiRange: caculateBrain.getBMIRange(), bmi: caculateBrain.getBMI().toString())));
                   },
                   child: Center(
                     child: Text("CACULATE",
